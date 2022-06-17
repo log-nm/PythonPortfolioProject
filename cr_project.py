@@ -16,8 +16,10 @@ a.sort_values(by=['imdb_score'], ascending=False)
 
 a.plot()
 
-# drop table, exclude null, sort values
+# drop table
 b = cr_df.drop(['id', 'type', 'title', 'release_year', 'description', 'production_countries', 'imdb_score', 'imdb_votes', 'tmdb_popularity', 'tmdb_score', 'imdb_id'], axis = 1)
+
+# exclude null, sort values
 b.dropna(subset=['age_certification', 'seasons'], inplace=True)
 b.sort_values(by=['seasons', 'runtime'], ascending=False)
 
